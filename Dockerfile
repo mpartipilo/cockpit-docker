@@ -17,10 +17,10 @@ RUN apt-get update \
 RUN echo "extension=mongodb.so" > /usr/local/etc/php/conf.d/mongodb.ini
 RUN echo "extension=redis.so" > /usr/local/etc/php/conf.d/redis.ini
 
-RUN wget https://github.com/agentejo/cockpit/archive/master.zip -O /tmp/cockpit.zip; unzip /tmp/cockpit.zip -d /tmp/; rm /tmp/cockpit.zip
-RUN mv /tmp/cockpit-master/.htaccess /var/www/html/.htaccess
-RUN mv /tmp/cockpit-master/* /var/www/html/
-RUN rm -R /tmp/cockpit-master/
+RUN wget https://github.com/agentejo/cockpit/archive/next.zip -O /tmp/cockpit.zip; unzip /tmp/cockpit.zip -d /tmp/; rm /tmp/cockpit.zip
+RUN mv /tmp/cockpit-next/.htaccess /var/www/html/.htaccess
+RUN mv /tmp/cockpit-next/* /var/www/html/
+RUN rm -R /tmp/cockpit-next/
 RUN echo "\n\nphp_value post_max_size 256M" >> /var/www/html/.htaccess
 RUN echo "\nphp_value  upload_max_filesize 256M" >> /var/www/html/.htaccess
 
